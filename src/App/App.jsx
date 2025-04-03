@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import sampleData from "../sampleData.json";
+import classData from "../classes.json";
 import "./App.css";
 
 const App = () => {
   const [data, setData] = useState();
   useEffect(() => {
-    setData(sampleData.data);
+    setData(classData.data);
   }, []);
 
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <h1>Classes in your area</h1>
       <p>{data?.[0].clientName}</p>
     </div>
   );
