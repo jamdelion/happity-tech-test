@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import React from "react";
-import { describe, expect, test } from "vitest";
+import { describe, expect, test, vi } from "vitest";
 import App from "../App.jsx";
 
 describe("Class listings view", () => {
@@ -16,6 +16,16 @@ describe("Class listings view", () => {
     expect(screen.getByText("Toddler Time Center")).toBeInTheDocument();
     expect(
       screen.getByText("15 Baby Lane, Anytown, AB1 2CD")
+    ).toBeInTheDocument();
+  });
+
+  test("calculates the next date of the class based on today's date", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2025-07-11").getTime());
+    render(<App />);
+    const firstClassListing = screen.getByTestId("Baby Sensory Play");
+    expect(
+      within(firstClassListing).getByText("Next on: 2025-07-14")
     ).toBeInTheDocument();
   });
 });

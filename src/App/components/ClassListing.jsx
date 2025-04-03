@@ -15,8 +15,14 @@ const ListingSection = styled.div`
 `;
 
 export const ClassListing = ({ classListing }) => {
+  const today = new Date();
+  const nextClassDate = classListing.dates_running.find((dateString) => {
+    const date = new Date(dateString);
+    return date > today;
+  });
+
   return (
-    <ClassListingCard>
+    <ClassListingCard data-testid={classListing.class_name}>
       <h2>{classListing.class_name}</h2>
       <h3>{classListing.provider_name}</h3>
       <div>
@@ -27,6 +33,7 @@ export const ClassListing = ({ classListing }) => {
         <ListingSection>
           <p>Day: {classListing.usual_day}</p>
           <p>Time: {classListing.start_time}</p>
+          <p>Next on: {nextClassDate}</p>
         </ListingSection>
         <ListingSection>
           <p style={{ paddingBottom: "1rem" }}>£{classListing.price}</p>

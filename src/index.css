@@ -55,7 +55,6 @@ html {
 }
 body {
   padding: 0;
-  background-color: hsl(40, 70%, 84%);
 }
 #root {
   min-height: 100%;
