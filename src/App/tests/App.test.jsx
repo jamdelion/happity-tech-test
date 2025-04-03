@@ -27,9 +27,13 @@ describe("Class listings view", () => {
     expect(
       within(firstClassListing).getByText("Next on: 2025-07-14")
     ).toBeInTheDocument();
+    vi.useRealTimers();
   });
 
-  test("can filter by class category", () => {
-    //  todo
+  test.todo("can filter by class category", () => {
+    const selectInput = screen.getByLabelText("Filter by category:");
+    expect(selectInput).toHaveValue("All");
+    // user chooses option
+    // expect UI to render only classes with that category option
   });
 });
