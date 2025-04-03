@@ -3,7 +3,7 @@ import classData from "../classes.json";
 import "./App.css";
 
 const App = () => {
-  const [data, setData] = useState();
+  const [data, setData] = useState([]);
   useEffect(() => {
     setData(classData.data);
   }, []);
@@ -11,7 +11,14 @@ const App = () => {
   return (
     <div className="App">
       <h1>Classes in your area</h1>
-      <p>{data?.[0].clientName}</p>
+      <div>
+        {/* classes container */}
+        {data.map(({ class_name }) => (
+          <div>
+            <h2 key={class_name}>{class_name}</h2>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

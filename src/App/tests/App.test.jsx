@@ -9,8 +9,10 @@ describe("Class listings view", () => {
     expect(screen.getByText("Classes in your area")).toBeInTheDocument();
   });
 
-  // test("displays the first piece of data", () => {
-  //   render(<App />);
-  //   expect(screen.getByText("Alice Jones")).toBeInTheDocument();
-  // });
+  test("displays the first piece of data", () => {
+    render(<App />);
+    expect(screen.getByText("Baby Sensory Play")).toBeInTheDocument();
+    // expect(screen.getByText("Little Learners")).toBeInTheDocument();
+    // expect(screen.getByText("Toddler Time Center")).toBeInTheDocument();
+  });
 });
