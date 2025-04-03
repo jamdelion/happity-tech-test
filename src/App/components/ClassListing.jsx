@@ -18,6 +18,12 @@ export const ClassListing = ({ classListing }) => {
         <p>{classListing.venue_name}</p>
         <p>{classListing.venue_address}</p>
       </div>
+      <div>
+        <p>Day: {classListing.usual_day}</p>
+        <p>Time: {classListing.start_time}</p>
+        {/* <p>Next on: {classListing.start_time}</p> */}
+      </div>
+      <p>£{classListing.price}</p>
     </ClassListingCard>
   );
 };
