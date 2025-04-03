@@ -12,7 +12,10 @@ describe("Class listings view", () => {
   test("displays the first piece of data", () => {
     render(<App />);
     expect(screen.getByText("Baby Sensory Play")).toBeInTheDocument();
-    // expect(screen.getByText("Little Learners")).toBeInTheDocument();
-    // expect(screen.getByText("Toddler Time Center")).toBeInTheDocument();
+    expect(screen.getByText("Little Learners")).toBeInTheDocument();
+    expect(screen.getByText("Toddler Time Center")).toBeInTheDocument();
+    expect(
+      screen.getByText("15 Baby Lane, Anytown, AB1 2CD")
+    ).toBeInTheDocument();
   });
 });

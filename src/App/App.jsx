@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import classData from "../classes.json";
-import "./App.css";
 import { ClassListing } from "./components/ClassListing";
 
 const App = () => {
