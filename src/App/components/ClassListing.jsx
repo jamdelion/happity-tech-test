@@ -9,21 +9,29 @@ const ClassListingCard = styled.div`
   border-bottom: 3px solid hsl(265deg 61% 36%);
 `;
 
+const ListingSection = styled.div`
+  text-align: start;
+  padding-top: 1rem;
+`;
+
 export const ClassListing = ({ classListing }) => {
   return (
     <ClassListingCard>
       <h2>{classListing.class_name}</h2>
       <h3>{classListing.provider_name}</h3>
       <div>
-        <p>{classListing.venue_name}</p>
-        <p>{classListing.venue_address}</p>
+        <ListingSection>
+          <p>{classListing.venue_name}</p>
+          <p>{classListing.venue_address}</p>
+        </ListingSection>
+        <ListingSection>
+          <p>Day: {classListing.usual_day}</p>
+          <p>Time: {classListing.start_time}</p>
+        </ListingSection>
+        <ListingSection>
+          <p style={{ paddingBottom: "1rem" }}>£{classListing.price}</p>
+        </ListingSection>
       </div>
-      <div>
-        <p>Day: {classListing.usual_day}</p>
-        <p>Time: {classListing.start_time}</p>
-        {/* <p>Next on: {classListing.start_time}</p> */}
-      </div>
-      <p>£{classListing.price}</p>
     </ClassListingCard>
   );
 };
