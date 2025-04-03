@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import classData from "../classes.json";
 import "./App.css";
+import { ClassListing } from "./components/ClassListing";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -13,10 +14,11 @@ const App = () => {
       <h1>Classes in your area</h1>
       <div>
         {/* classes container */}
-        {data.map(({ class_name }) => (
-          <div>
-            <h2 key={class_name}>{class_name}</h2>
-          </div>
+        {data.map((classListing) => (
+          <ClassListing
+            key={classListing.class_name}
+            classListing={classListing}
+          />
         ))}
       </div>
     </div>
