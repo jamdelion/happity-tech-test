@@ -28,4 +28,8 @@ describe("Class listings view", () => {
       within(firstClassListing).getByText("Next on: 2025-07-14")
     ).toBeInTheDocument();
   });
+
+  test("can filter by class category", () => {
+    //  todo
+  });
 });

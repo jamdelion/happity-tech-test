@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const ClassListingCard = styled.div`
-  padding: 0px 8px;
-  margin: 1rem 0;
+  padding: 0px 1rem;
+  margin: 2rem 0;
   border-radius: 4px;
   border: 1px solid hsl(265deg 61% 36%);
   border-bottom: 3px solid hsl(265deg 61% 36%);
